@@ -1,19 +1,52 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">ECommerce</a>
+        <a class="navbar-brand" href="/">ECommerce</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="dropdown show">
+                <a class="btn btn-secondary bg-dark btn-sm dropdown-toggle border-0 font-weight-bold" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Category
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#">Computer & Laptops</a>
+                  <a class="dropdown-item" href="#">Mobiles</a>
+                  <a class="dropdown-item" href="#">Men</a>
+                  <a class="dropdown-item" href="#">Women</a>
+                  <a class="dropdown-item" href="#">Kids</a>
+                </div>
+            </div>
             <div class="navbar-nav">
                 <a class="nav-link" href="/">Home</a>
+            </div>
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Best Sellers</a>
+            </div>
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">About</a>
             </div>
             <div class="navbar-nav ml-auto">
                 <% if(!currentUser) {%>
                 <a class="nav-link" href="/login">Login</a>
                 <a class="nav-link" href="/register">Register</a>
                 <% } else {%>
+
+                <div class="dropdown show py-1">
+                    <a class="nav-link btn btn-secondary bg-dark btn-sm text-secondary font-weight-bold dropdown-toggle border-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Account<sup class="px-1 rounded text-dark bg-warning m-2">2</sup></a>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="#">Orders & Returns</a>
+                      <a class="dropdown-item" href="#">Wish List<sup class="px-1 rounded text-white bg-primary m-2">1</sup></a></a>
+                      <a class="dropdown-item" href="#">Notifications<sup class="px-1 rounded text-white bg-primary m-2">1</sup></a></a>
+                      <a class="dropdown-item" href="#">Payment Account</a>
+                      <a class="dropdown-item" href="#">Sell</a>
+                    </div>
+                </div>
+
+                <a class="nav-link" href="/">Cart<sup class="px-1 rounded text-dark bg-info m-2">4</sup></a>
                 <a class="nav-link" href="/logout">Logout</a>
                 <% } %>
             </div>
