@@ -7,7 +7,6 @@ document.getElementById("refreshButton").addEventListener("click", function() {
     refreshFunctionCheck = true;
     newCaptcha = generateCaptcha();
     gencaptcha.innerHTML = newCaptcha;
-    console.log("Working!!!!");
 });
 
 function registerFormValidation() {
