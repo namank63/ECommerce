@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate')%>
+<div class="my-container">
+    <form id="form" class="my-form" action="/seller/register" method="POST" onSubmit="return registerFormValidation();">
+        <h2 id="form-type">Register</h2>
+        <div class="my-form-control">
+            <label for="username"><i class="zmdi zmdi-account material-icons-name"></i> Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username">
+            <small>Error message</small>
+        </div>
+        <div class="my-form-control">
+            <label for="email"><i class="zmdi zmdi-email"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter email">
+            <small>Error message</small>
+        </div>
+        <div class="my-form-control">
+            <label for="password"><i class="zmdi zmdi-lock"></i> Password</label>
+            <input type="password" id="password" name="createpassword" placeholder="Enter password">
+            <small>Error message</small>
+        </div>
+        <div class="my-form-control">
+            <label for="password2"><i class="zmdi zmdi-lock"></i> Confirm Password</label>
+            <input type="password" id="password2" name="confirmpassword" placeholder="Enter password again">
+            <small>Error message</small>
+        </div>
+        <button id="submit" >Submit</button>
+    </form>
+</div>
