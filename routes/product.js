@@ -5,8 +5,9 @@ const {isLoggedIn, isAuthor} = require('../utils/middleware');
 const Product = require('../models/product');
 
 //Index    /products    GET
-router.get('/products', (req, res)=>{
-    res.redirect('/');
+router.get('/', async (req, res) => {
+    const products = await Product.find({});
+    res.render('products/index', { products });
 });
 
 

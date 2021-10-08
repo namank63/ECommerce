@@ -50,10 +50,6 @@ app.use((req, res, next) => {
 app.use('/', userRoutes);
 app.use('/', productRoutes);
 
-app.get('/', (req, res) => {
-    res.render('home')
-});
-
 app.get('/aboutus', (req, res) => {
     res.render('aboutus')
 });
