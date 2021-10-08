@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate')%>
+<div class="container">
+    <h1>Edit Page</h1>
+    <form action="/products/<%=product._id%>?_method=PUT" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="product[name]" value="<%- product.name %>">
+
+        <label for="price">price</label>
+        <input type="number" id="price" name="product[price]" value="<%- product.price %>">
+
+        <label for="description">Description</label>
+        <input type="text" id="description" name="product[description]" value="<%- product.description %>">
+
+        <label for="brand">Brand</label>
+        <input type="text" id="brand" name="product[brand]" value="<%- product.brand %>">
+
+        <label for="model">Model</label>
+        <input type="text" id="model" name="product[model]" value="<%- product.model %>">
+
+        <label for="units">Units</label>
+        <input type="number" id="units" name="product[units]" value="<%- product.units %>">
+
+        <label for="image">Image</label>
+        <input type="text" id="image" name="product[image]" value="<%- product.image %>">
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="product[location]" value="<%- product.location %>">
+
+        <label for="tags">Tags (space separated)</label>
+        <input type="text" id="tags" name="product[tags]" value="<%- product.tags%>">
+
+        <label for="category">Category</label>
+        <select name="product[category]" id="category">
+            <option value="<%-product.category%>" style="background-color: grey;" selcted><%-product.category%></option>
+            <option value="Mobile">Mobile</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Watch">Watch</option>
+        </select>
+        <button>Submit</button>
+    </form>
+</div>

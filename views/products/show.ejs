@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate')%>
+<div class="container">
+    <h1>Show Page</h1>
+    <p><label for="name">Name:</label> <%- product.name %></p>
+    <p><label for="price">Price:</label> <%- product.price %></p>
+    <p><label for="description">Description</label> <%- product.description %></p>
+    <p><label for="brand">Brand:</label> <%- product.brand %></p>
+    <p><label for="model">Model:</label> <%- product.model %></p>
+    <p><label for="units">Units:</label> <%- product.units %></p>
+    <p><label for="image">Image:</label> <%- product.image %></p>
+    <p><label for="location">Location:</label> <%- product.location %></p>
+    <p><label for="tags">Tags:</label> <%- product.tags %></p>
+    <p><label for="category">Category:</label> <%- product.category %></p>
+    <% if(currentUser && currentUser.profile === 'dealer') { %>
+        <a href="/products/<%=product._id%>/edit">Edit</a>
+        <form action="/products/<%-product._id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+    <% } else if (currentUser && currentUser.profile === 'customer') { %>
+        <button>Buy</button>
+        <button>Cart</button>
+    <% } else { %>
+        <button>Login to Purchase</button>
+    <% } %>
+</div>

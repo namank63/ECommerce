@@ -1,18 +1,25 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const user = require('./user');
 
 const ProductSchema = new Schema({
     name: String,
     price: Number,
+    description: String,
     brand: String,
-    Model: String,
-    Dealer: {
+    model: String,
+    category: String,
+    units: Number,
+    image: String,
+    rating: Number,
+    location: String,
+    dealer: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    tags: [{
-        type: String
+    tags: String,
+    customers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }]
 });
 
