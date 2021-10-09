@@ -3,6 +3,7 @@ const router = express.Router();
 const catchAsync = require('../utils/catchAsync');
 const {isLoggedIn, isAuthor} = require('../utils/middleware');
 const Product = require('../models/product');
+const User = require('../models/user');
 
 //Index    /products    GET
 router.get('/', async (req, res) => {
@@ -18,14 +19,17 @@ router.get('/product/new', (req, res)=>{
 
 
 //Create    /products    POST
-router.post('/products', catchAsync (async(req, res)=>{
+router.post('/products', isLoggedIn, catchAsync (async(req, res)=>{
+    const id = req.user._id;
+    const dealer = await User.findById(id);
     const { name, price, description, brand, model, units, image, location, tags, category } = req.body;
     const product = new Product({
-        name, price, description, brand, model, units, image, location, tags, category
+        name, price, description, brand, model, units, image, location, dealer, tags, category
     });
-
+    await dealer.items.push(product);
     await product.save();
-    res.send(product);
+    await dealer.save();
+    res.redirect('/dealer');
 }));
 
 
@@ -50,16 +54,21 @@ router.put('/products/:id', catchAsync(async (req, res) => {
     const product = await Product.findByIdAndUpdate(id, { ...req.body.product });
     console.log(product);
     req.flash('success', 'Successfully updated product!');
-    res.redirect(`/products/${product._id}`);
+    res.redirect(`/dealer`);
 }));
 
 
 //Delete    /products/:id    DELETE
 router.delete('/products/:id', isLoggedIn, catchAsync(async (req, res) => {
     const { id } = req.params;
+    const dealer = await User.findById(req.user._id);
+    const index = dealer.items.indexOf(id);
+    if (index !== -1)
+        dealer.items.splice(index, 1);
+    await dealer.save();
     await Product.findByIdAndDelete(id);
-    req.flash('success', 'Successfully deleted campground')
-    res.redirect('/products');
+    req.flash('success', 'Successfully deleted product');
+    res.redirect('/dealer');
 }));
 
 

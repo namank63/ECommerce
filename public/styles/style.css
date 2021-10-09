@@ -80,6 +80,16 @@
     width: 100%
 }
 
+.acc-select {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 50%;
+    padding: 1px;
+    font-size: 14px;
+    outline: none;
+}
+
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

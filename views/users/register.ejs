@@ -22,6 +22,17 @@
             <input type="password" id="password2" name="confirmpassword" placeholder="Enter password again">
             <small>Error message</small>
         </div>
+
+        <div class="my-form-control">
+            <div style="display: flex; justify-content:space-between;">
+                <label for="profile"><i class="zmdi zmdi-settings"></i> Account Type</label>
+                <select class="acc-select" name="profile" id="profile">
+                    <option class="acc-select" value="customer" selected>Customer</option>
+                    <option class="acc-select" value="dealer">Dealer</option>
+                </select>
+            </div>
+        </div>
+
         <button id="submit" >Submit</button>
     </form>
 </div>

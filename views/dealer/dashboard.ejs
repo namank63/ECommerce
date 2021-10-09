@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate')%>
+<div class="container">
+  <a class="btn btn-small border rounder" href="/product/new">Add Product</a>
+
+  <div class="container mb-5">
+      <div class="d-flex justify-content-center row">
+          <div class="col-md-8">
+            <% products.forEach( (product) => { %> 
+              <div class="row p-3 bg-white border rounded mb-3">
+                <div class="col-md-4 mt-1"><img class="img-fluid img-responsive rounded product-image" src="<%-product.image%>"></div>
+                <div class="col-md-5 mt-1">
+                    <h4><%-product.name%></h4>
+                    <div class="d-flex flex-row">
+                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span><%-product.brand%> | Model: <%-product.model%></span>
+                    </div>
+                    <div class="mt-1 mb-1 spec-1"><span class="dot"></span><span><%-product.category%></span><span class="dot"></span><span>Rating: <%-product.rating%><br></span></div>
+                    <div class="mt-1 mb-1 spec-1"><span class="dot"></span><span><%-product.units%> units available</span><span class="dot"></span><span><%-product.dealer%><br></span></div>
+                    <p class="text-justify text-truncate para mb-0"><%-product.description%><br><br></p>
+                </div>
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1">₹<%-product.price%></h4><span class="strike-text">$<%-product.price + (product.price * 0.2)%></span>
+                    </div>
+                    <h6 class="text-success">Free shipping</h6>
+                    <div class="d-flex flex-column mt-4"> 
+                      <a class="btn btn-info btn-sm" href="/products/<%-product._id%>">Details</a>
+                      <a class="btn btn-warning btn-sm mt-2" href="/products/<%-product._id%>/edit">Update</a>
+                      <form class="d-flex flex-column" action="/products/<%=product._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger btn-sm mt-2" type="submit">Delete</button>
+                      </form>
+                    </div>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+      </div>
+    </div>
+
+</div>

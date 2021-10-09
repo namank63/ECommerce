@@ -10,8 +10,8 @@ router.get('/register', (req, res) => {
 
 router.post('/register', catchAsync(async (req, res, next) => {
     try {
-        const { email, username, createpassword } = req.body;
-        const user = new User({ email, username });
+        const { email, username, createpassword, profile } = req.body;
+        const user = new User({ email, username, profile });
         const registeredUser = await User.register(user, createpassword);
         req.login(registeredUser, err => {
             if (err) return next(err);
@@ -40,5 +40,42 @@ router.get('/logout', (req, res) => {
     req.flash('success', "Logged out Successfully, Goodbye!!");
     res.redirect('/');
 })
+
+//SHOW
+router.get('/users/:id', async(req, res)=>{
+    const user = await User.findById(req.user._id);
+    res.render('users/show', {user});
+});
+
+//EDIT
+router.get('/users/:id/edit', async(req, res)=>{
+    const user = await User.findById(req.user._id);
+    res.render('users/edit', {user});
+});
+
+//UPDATE
+// router.patch('/users/:id', catchAsync(async (req, res) => {
+//     const id = req.user._id;
+//     const { profile, email, mobile, address, storeLocation } = req.body;
+//     const user = await User.findById(id);
+
+//     user.profile = profile;
+//     user.email = email;
+//     user.mobile = mobile;
+//     user.address = address;
+//     user.storeLocation = storeLocation;
+
+//     await user.save();
+
+//     req.flash('success', 'Account Updated Successfully');
+//     res.redirect(`/users/${id}`);
+// }));
+
+router.put('/users/:id', catchAsync(async (req, res) => {
+    const id = req.user._id;
+    const user = await User.findByIdAndUpdate(id, { ...req.body.user });
+    req.flash('success', 'Account Updated Successfully!');
+    res.redirect(`/users/${id}`);
+}));
 
 module.exports = router;
