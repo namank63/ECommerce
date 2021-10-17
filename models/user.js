@@ -4,7 +4,11 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 const UserSchema = new Schema({
     profile: String,
-    
+    image: {
+        type: String,
+        default: "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
+    },
+
     email: {
         type: String,
         required: true,
@@ -12,6 +16,7 @@ const UserSchema = new Schema({
     },
     
     mobile: String,
+    cartItemCount: Number,
 
     //As Customer
     address: String,
@@ -25,7 +30,11 @@ const UserSchema = new Schema({
     items: [{
         type: Schema.Types.ObjectId,
         ref: 'Product'
-    }]
+    }],
+
+    //As Admin
+    uniquekey: String,
+    officeLocation: String
 });
 
 UserSchema.plugin(passportLocalMongoose);

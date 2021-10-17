@@ -50,9 +50,7 @@ router.get('/products/:id/edit', async (req, res)=>{
 //Update    /products/:id    PUT
 router.put('/products/:id', catchAsync(async (req, res) => {
     const { id } = req.params;
-    console.log(req.params);
     const product = await Product.findByIdAndUpdate(id, { ...req.body.product });
-    console.log(product);
     req.flash('success', 'Successfully updated product!');
     res.redirect(`/dealer`);
 }));

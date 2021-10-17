@@ -174,7 +174,12 @@
                     <h6 class="text-success">Free shipping</h6>
                     <div class="d-flex flex-column mt-4"> 
                       <a class="btn btn-primary btn-sm" href="/products/<%-product._id%>">Details</a> 
-                      <button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to Cart</button>
+                      <form class="d-flex flex-column" action="/user/<%-product._id%>/cart" method="POST">
+                        <button class="btn btn-outline-primary btn-sm mt-2 addButton" type="submit">Add to Cart</button>
+                      </form>
+                      <% if(currentUser) { %>
+                        <a class="btn btn-outline-info btn-sm mt-2 msg" style="display: none" href="/user/<%-currentUser._id%>/cart">Item Added to Cart</a>  
+                      <% } %>
                     </div>
                 </div>
               </div>

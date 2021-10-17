@@ -1,7 +1,6 @@
 const formType = document.getElementById('form-type');
 
 if(formType != null && formType.innerHTML === 'Login') {
-    console.log('Login Page');
     let gencaptcha = document.querySelector("#gencaptcha");
     let newCaptcha = generateCaptcha();
     gencaptcha.innerHTML = newCaptcha;

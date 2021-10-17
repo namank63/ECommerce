@@ -15,6 +15,7 @@ const methodOverride = require('method-override');
 const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/product');
 const dealerRoutes = require('./routes/dealer');
+const adminRoutes = require('./routes/admin');
 
 //CONFIGURATION
 DataBaseConnect();
@@ -51,6 +52,7 @@ app.use((req, res, next) => {
 app.use('/', userRoutes);
 app.use('/', productRoutes);
 app.use('/', dealerRoutes);
+app.use('/', adminRoutes);
 
 app.get('/aboutus', (req, res) => {
     res.render('aboutus')

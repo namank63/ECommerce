@@ -5,6 +5,13 @@ module.exports.isLoggedIn = (req, res, next) => {
     next();
 }
 
+module.exports.isAdminLoggedIn = (req, res, next) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/admin/login');
+    }
+    next();
+}
+
 module.exports.isAuthor = async (req, res, next) => {
     const { id } = req.params;
     const product = await Product.findById(id);

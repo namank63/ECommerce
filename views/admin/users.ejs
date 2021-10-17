@@ -1,0 +1,46 @@
+<% layout('layouts/adminBoilerplate')%>
+<div class="container">
+  <div class="container mb-5">
+      <div class="d-flex justify-content-center row">
+          <div class="col-md-8">
+            <% users.forEach( (user) => { %>
+              <div class="row p-2 bg-white border rounded mb-3">
+                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="<%-user.image%>"></div>
+                <div class="col-md-6 mt-1">
+                    <h4><%-user.username%></h4>
+                    <div class="d-flex flex-row">
+                        <span>Email: <%-user.email%></span>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <span>Mobile: <%-user.mobile%></span>
+                    </div>
+                    <% if(user.profile === 'customer') { %>
+                      <div class="d-flex flex-row">
+                        <span>Address: <%-user.address%></span>
+                      </div>
+                    <% } else if (user.profile === 'dealer') { %>
+                      <div class="d-flex flex-row">
+                        <span>Shop Address: <%-user.storeLocation%></span>
+                      </div>
+                    <% } else { %>
+                      <div class="d-flex flex-row">
+                        <span>Office Address: <%-user.officeLocation%></span>
+                      </div>
+                    <% } %>
+                    
+                </div>
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <h6 class="text-success"><%-user.profile%></h6>
+                    <div class="d-flex flex-column mt-4">
+                      <a class="btn btn-info btn-sm" href="/admin/users/<%-user._id%>">Details</a>
+                      <form class="d-flex flex-column" action="/users/<%=user._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger btn-sm mt-2" type="submit">Delete</button>
+                      </form>
+                    </div>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+      </div>
+    </div>
+</div>
