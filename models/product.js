@@ -9,7 +9,10 @@ const ProductSchema = new Schema({
     model: String,
     category: String,
     units: Number,
-    image: String,
+    image: {
+        type: String,
+        default: "https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/open_box4-512.png"
+    },
     rating: Number,
     location: String,
     dealer: {
@@ -18,6 +21,10 @@ const ProductSchema = new Schema({
     },
     tags: String,
     customers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    incart: [{
         type: Schema.Types.ObjectId,
         ref: 'User'
     }]

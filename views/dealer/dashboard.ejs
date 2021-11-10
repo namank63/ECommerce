@@ -1,10 +1,9 @@
 <% layout('layouts/boilerplate')%>
 <div class="container">
-  <a class="btn btn-small border rounder" href="/product/new">Add Product</a>
-
   <div class="container mb-5">
       <div class="d-flex justify-content-center row">
           <div class="col-md-8">
+            <a class="mb-3 btn btn-small border rounder" href="/product/new">Add Product</a>
             <% products.forEach( (product) => { %> 
               <div class="row p-3 bg-white border rounded mb-3">
                 <div class="col-md-4 mt-1"><img class="img-fluid img-responsive rounded product-image" src="<%-product.image%>"></div>
@@ -35,5 +34,4 @@
           </div>
       </div>
     </div>
-
 </div>

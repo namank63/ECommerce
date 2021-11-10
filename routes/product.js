@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
     res.render('products/index', { products });
 });
 
-
 //New    /product/new    GET
 router.get('/product/new', (req, res)=>{
     res.render('products/new');
@@ -64,10 +63,23 @@ router.delete('/products/:id', isLoggedIn, catchAsync(async (req, res) => {
     if (index !== -1)
         dealer.items.splice(index, 1);
     await dealer.save();
+    const product = await Product.findById(id);
+    for(let i = 0; i < product.incart.length; i++) {
+        let user = await User.findById(product.incart[i]);
+        await user.cart.pull(id);
+        await user.save();
+    }
     await Product.findByIdAndDelete(id);
     req.flash('success', 'Successfully deleted product');
     res.redirect('/dealer');
 }));
 
+
+//Category Wise List
+router.get('/products/category/:category', async(req, res)=>{
+    const products = await Product.find({'category': req.params.category});
+    const productCat = req.params.category;
+    res.render('products/category', {products, productCat});
+});
 
 module.exports = router;

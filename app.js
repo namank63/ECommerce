@@ -55,11 +55,15 @@ app.use('/', dealerRoutes);
 app.use('/', adminRoutes);
 
 app.get('/aboutus', (req, res) => {
-    res.render('aboutus')
+    res.render('aboutus');
 });
 
 app.get('/contact', (req, res) => {
-    res.render('contact')
+    res.render('contact');
+});
+
+app.get('/team', (req, res) => {
+    res.render('team');
 });
 
 app.all('*', (req, res, next) => {

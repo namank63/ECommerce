@@ -3,6 +3,11 @@
   <div class="container mb-5">
       <div class="d-flex justify-content-center row">
           <div class="col-md-8">
+            <h4>Your Cart
+            <% if(currentUser.cart.length === 0) { %>
+                is Empty!
+            <% } %>
+            </h4> 
             <% products.forEach( (product) => { %> 
               <div class="row p-3 bg-white border rounded mb-3">
                 <div class="col-md-4 mt-1"><img class="img-fluid img-responsive rounded product-image" src="<%-product.image%>"></div>
@@ -22,9 +27,9 @@
                     <h6 class="text-success">Free shipping</h6>
                     <div class="d-flex flex-column mt-4"> 
                       <a class="btn btn-info btn-sm" href="/products/<%-product._id%>">Details</a>
-                      <a class="btn btn-warning btn-sm mt-2" href="/products/<%-product._id%>/edit">Update</a>
-                      <form class="d-flex flex-column" action="/products/<%=product._id%>?_method=DELETE" method="POST">
-                        <button class="btn btn-danger btn-sm mt-2" type="submit">Delete</button>
+                      <a class="btn btn-warning btn-sm mt-2" href="#">Buy</a>
+                      <form class="d-flex flex-column" action="/user/cartdelete/<%=product._id%>" method="POST">
+                        <button class="btn btn-danger btn-sm mt-2" type="submit">Remove</button>
                       </form>
                     </div>
                 </div>

@@ -16,7 +16,6 @@ const UserSchema = new Schema({
     },
     
     mobile: String,
-    cartItemCount: Number,
 
     //As Customer
     address: String,

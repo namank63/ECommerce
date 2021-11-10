@@ -94,9 +94,8 @@ router.post('/user/:id/cart', isLoggedIn, async(req, res)=>{
     }
 
     if(toAdd) {
-        await user.cartItemCount++;
         await user.cart.push(product);
-        await product.customers.push(user);
+        await product.incart.push(user);
         await user.save();
         await product.save();
     }
@@ -105,6 +104,17 @@ router.post('/user/:id/cart', isLoggedIn, async(req, res)=>{
     res.redirect('/');
     // res.status(204).send();
 
+});
+
+router.post('/user/cartdelete/:id', async(req, res)=>{
+    const id = req.params.id;
+    const user = await User.findById(req.user._id);
+    const product = await Product.findById(id);
+    await user.cart.pull(id);
+    await product.incart.pull(user._id);
+    await user.save();
+    await product.save();
+    res.redirect(`/user/${req.user._id}/cart`);
 });
 
 module.exports = router;
