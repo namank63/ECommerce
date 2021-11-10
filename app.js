@@ -12,7 +12,10 @@ const flash = require('connect-flash');
 const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
 
-const userRoutes = require('./routes/users');
+const userRoutes = require('./routes/user');
+const productRoutes = require('./routes/product');
+const dealerRoutes = require('./routes/dealer');
+const adminRoutes = require('./routes/admin');
 
 //CONFIGURATION
 DataBaseConnect();
@@ -47,17 +50,20 @@ app.use((req, res, next) => {
 })
 
 app.use('/', userRoutes);
-
-app.get('/', (req, res) => {
-    res.render('home')
-});
+app.use('/', productRoutes);
+app.use('/', dealerRoutes);
+app.use('/', adminRoutes);
 
 app.get('/aboutus', (req, res) => {
-    res.render('aboutus')
+    res.render('aboutus');
 });
 
 app.get('/contact', (req, res) => {
-    res.render('contact')
+    res.render('contact');
+});
+
+app.get('/team', (req, res) => {
+    res.render('team');
 });
 
 app.all('*', (req, res, next) => {

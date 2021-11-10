@@ -1,7 +1,6 @@
 const formType = document.getElementById('form-type');
 
 if(formType != null && formType.innerHTML === 'Login') {
-    console.log('Login Page');
     let gencaptcha = document.querySelector("#gencaptcha");
     let newCaptcha = generateCaptcha();
     gencaptcha.innerHTML = newCaptcha;
@@ -70,15 +69,12 @@ function loginFormValidation() {
     let genCaptcha = document.querySelector("#gencaptcha");
     let enterCaptcha = document.querySelector("#entercaptcha");
 
-    console.log(genCaptcha.innerHTML);
-    console.log(enterCaptcha.value);
-
     if(checkRequired([username, password, enterCaptcha])) {
         if(checkLength(username, 3, 15)) {
             if(checkLength(password, 6, 25)) {
-                if(checkCaptcha(enterCaptcha, genCaptcha)) {
+                // if(checkCaptcha(enterCaptcha, genCaptcha)) {
                     return true;
-                }
+                // }
             }
         }
     }

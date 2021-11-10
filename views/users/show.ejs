@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate')%>
+
+<div class="container">
+    <h1>Account Information</h1>
+    <p><label for="username">Username:</label> <%- user.username %></p>
+    <p><label for="email">Email:</label> <%- user.email %></p>
+    <p><label for="mobile">Mobile:</label> <%- user.mobile %></p>
+    <p><label for="profile">Account Type:</label> <%- user.profile %></p>
+      <p><label for="address">Delivery Address:</label> <%- user.address %></p>
+    <% if(currentUser && currentUser.profile === 'dealer') { %>
+      <p><label for="address">Store Address:</label> <%- user.storeLocation %></p>
+    <% } %>
+    <a href="/users/<%-user._id%>/edit">Edit Account</a>
+</div>

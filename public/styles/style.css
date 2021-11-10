@@ -80,6 +80,16 @@
     width: 100%
 }
 
+.acc-select {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 50%;
+    padding: 1px;
+    font-size: 14px;
+    outline: none;
+}
+
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -95,4 +105,42 @@
     margin-left: 5px;
     margin-top: -15px;
     outline: none;
+}
+
+.ratings i {
+    font-size: 16px;
+    color: red;
+}
+
+.strike-text {
+    color: red;
+    text-decoration: line-through
+}
+
+.product-image {
+    width: 100%
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 3px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    display: inline-block
+}
+
+.spec-1 {
+    color: #938787;
+    font-size: 15px
+}
+
+h5 {
+    font-weight: 400
+}
+
+.para {
+    font-size: 16px
 }

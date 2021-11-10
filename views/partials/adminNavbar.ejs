@@ -1,0 +1,44 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">WebTroopers</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/admin">Dashboard</a>
+            </div>
+            <% if(currentUser && currentUser.profile === 'admin') { %>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/admin/users">Users</a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/admin/products">Products</a>
+                </div>
+            <% } %>
+            <div class="navbar-nav">
+                <a class="nav-link" href="/contact">Contact</a>
+            </div>
+            <div class="navbar-nav">
+                <a class="nav-link" href="aboutus">About</a>
+            </div>
+
+            <form class=" ml-3 form-inline my-2 my-lg-0">
+                <div style="display: flex;">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                </div>
+            </form>
+
+            <div class="navbar-nav ml-auto">
+                <% if(!currentUser) {%>
+                    <a class="nav-link" href="/admin/login">Login</a>
+                    <a class="nav-link" href="/admin/register">Register</a>
+                <% } else {%>
+                    <a class="nav-link" href="/admin/logout">Logout</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

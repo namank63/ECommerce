@@ -1,18 +1,32 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const user = require('./user');
 
 const ProductSchema = new Schema({
     name: String,
     price: Number,
+    description: String,
     brand: String,
-    Model: String,
-    Dealer: {
+    model: String,
+    category: String,
+    units: Number,
+    image: {
+        type: String,
+        default: "https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/open_box4-512.png"
+    },
+    rating: Number,
+    location: String,
+    dealer: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    tags: [{
-        type: String
+    tags: String,
+    customers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    incart: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }]
 });
 

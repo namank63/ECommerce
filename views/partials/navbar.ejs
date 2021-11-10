@@ -11,11 +11,9 @@
                   Category
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">Computer & Laptops</a>
-                  <a class="dropdown-item" href="#">Mobiles</a>
-                  <a class="dropdown-item" href="#">Men</a>
-                  <a class="dropdown-item" href="#">Women</a>
-                  <a class="dropdown-item" href="#">Kids</a>
+                  <a class="dropdown-item" href="/products/category/Mobile">Mobiles</a>
+                  <a class="dropdown-item" href="/products/category/Laptop">Laptop</a>
+                  <a class="dropdown-item" href="/products/category/Watch">Watch</a>
                 </div>
             </div>
             <div class="navbar-nav">
@@ -27,6 +25,12 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="aboutus">About</a>
             </div>
+
+            <% if(currentUser && currentUser.profile === 'dealer') { %>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/dealer">Sell</a>
+                </div>
+            <% } %>
 
             <form class=" ml-3 form-inline my-2 my-lg-0">
                 <div style="display: flex;">
@@ -50,11 +54,11 @@
                       <a class="dropdown-item" href="#">Wish List<sup class="px-1 rounded text-white bg-primary m-2">1</sup></a></a>
                       <a class="dropdown-item" href="#">Notifications<sup class="px-1 rounded text-white bg-primary m-2">1</sup></a></a>
                       <a class="dropdown-item" href="#">Payment Account</a>
-                      <a class="dropdown-item" href="#">Sell</a>
+                      <a class="dropdown-item" href="/users/<%-currentUser._id%>">Settings</a>
                     </div>
                 </div>
 
-                <a class="nav-link" href="/">Cart<sup class="px-1 rounded text-dark bg-info m-2">4</sup></a>
+                <a class="nav-link" href="/user/<%-currentUser._id%>/cart">Cart<sup class="px-1 rounded text-dark bg-info m-2"><%-currentUser.cart.length%></sup></a>
                 <a class="nav-link" href="/logout">Logout</a>
                 <% } %>
             </div>
