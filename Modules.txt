@@ -1,0 +1,92 @@
+Home Page
+=========
+  navbar
+    > Category
+    Best Seller
+    Contact
+    About
+    > Search
+    > Login
+    > Register
+  Carsoul List
+  Best Sellet Items
+  Newly Added item List
+  Footer
+    > Admin
+    Team
+    Details
+  navbar-after-login
+    My Account
+      Order & Return
+      Wish List
+      Notification
+      Payment Account
+      > Settings
+    > Cart
+    Logout
+
+
+
+
+
+Category
+--------
+Mobile
+Laptop
+Watch
+
+Search
+------
+Given space for tag
+It will search for items
+
+Login
+-----
+Username
+Password
+Captcha
+Login Button
+
+Register
+--------
+Username
+Email
+Create Password
+Confirm Password
+Account Type
+Customer
+Dealer
+Submit
+
+After Login Admin
+=================
+navbar
+  Dashboard
+  Users
+  Products
+  Logout
+
+
+After Login As Customer
+=======================
+NULL
+
+
+After Login As Dealer
+=====================
+> Sell
+  > Add Products
+  List of owned Products
+    Details
+    > Update
+    Delete
+
+
+
+
+
+
+  To-Fix
+  ======
+  1) List date wise ulta karo
+  2) Admin Dashboard ko sunder karo

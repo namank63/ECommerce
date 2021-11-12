@@ -82,4 +82,16 @@ router.get('/products/category/:category', async(req, res)=>{
     res.render('products/category', {products, productCat});
 });
 
+router.post('/product/search', async(req, res)=>{
+    const tag = req.body.tag;
+    const allProducts = await Product.find({});
+    let products = [];
+    for(let i = 0; i < allProducts.length; i++) {
+        if(tag.length > 0 && allProducts[i].tags.includes(tag)) {
+            products.push(allProducts[i]);
+        }
+    }
+    res.render('products/search', {products});
+});
+
 module.exports = router;

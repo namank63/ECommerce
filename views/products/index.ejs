@@ -99,7 +99,7 @@
           </div>
 
 
-          <!-- <div class="col-md-4">
+          <div class="col-md-4">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="https://images.unsplash.com/photo-1546027658-7aa750153465?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="Card image cap">
               <div class="card-body">
@@ -143,7 +143,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
 
 
         </div>
@@ -157,15 +157,15 @@
   
             <% products.forEach( (product) => { %> 
               <div class="row p-3 bg-white border rounded mb-3">
-                <div class="col-md-4 mt-1"><img class="img-fluid img-responsive rounded product-image" src="<%-product.image%>"></div>
+                <div class="col-md-4 mt-1"><img style="width: 300px; height: auto;" class="img-fluid img-responsive rounded product-image" src="<%-product.image%>"></div>
                 <div class="col-md-5 mt-1">
                     <h4><%-product.name%></h4>
                     <div class="d-flex flex-row">
                         <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span><%-product.brand%> | Model: <%-product.model%></span>
                     </div>
                     <div class="mt-1 mb-1 spec-1"><span class="dot"></span><span><%-product.category%></span><span class="dot"></span><span>Rating: <%-product.rating%><br></span></div>
-                    <div class="mt-1 mb-1 spec-1"><span class="dot"></span><span><%-product.units%> units available</span><span class="dot"></span><span><%-product.dealer%><br></span></div>
-                    <p class="text-justify text-truncate para mb-0"><%-product.description%><br><br></p>
+                    <div class="mt-1 mb-1 spec-1"><span class="dot"></span><span><%-product.units%> units available</span><span class="dot"></span></div>
+                    <textarea readonly style="width: 100%; height: 35%; border: none; resize: none; outline: none;" name=""><%-product.description%></textarea>
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">

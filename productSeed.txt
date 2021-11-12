@@ -1,0 +1,32 @@
+name: iPhone 13
+price: 79900
+description: Your new superpower. Buy now. Our most advanced dual-camera system ever. Learn more. Privacy built in. Durable flat-edge design. Five new colours. Huge camera upgrade. A15 Bionic chip. Super Retina XDR display.
+brand: Apple
+model: 13
+category: Mobile
+units: 7
+image: https://m.media-amazon.com/images/I/71gm8v4uPBL._SX466_.jpg
+tags: apple mobile camera phone iphone dual new latest notch
+Location: Bangalore
+
+name: Google Pixel 6
+price: 44990
+description: With a Pixel phone, you get the purest Android experience possible; it's Android just as Google intended. Android running on a Pixel phone looks stunning, way better than iOS on the iPhone. It is also free from ALL the useless bloatware you get on non-Pixel Android phones.
+brand: Google
+model: Pixel 6
+category: Mobile
+units: 4
+image: https://lh3.googleusercontent.com/BeXHGJzbj3HEs7PlYRX1_ty4IaOl-nvV2yMY33-KXmx8divLtPER3jI22LYTXUcy0fIVFyf0l8YRRFXWz9fCAHgxvcLEgkfmMEY
+tags: google mobile camera phone pixel dual new latest
+Location: Bangalore
+
+name: Xperia Pro-I
+price: 135000
+description: The Xperia PRO-I features a genuine 1.0-type sensor, enabling you to capture photos and videos with exceptional imaging quality. The large sensor is supported by Sony's original image signal processor, giving the camera high-speed performance for unlimited creativity.
+brand: Sony
+model: Xperia Pro-I
+category: Mobile
+units: 4
+image: https://3.img-dpreview.com/files/p/E~TC4x3S590x0~articles/1641689739/Xperia_Pro-I_1.jpeg
+tags: sony mobile camera phone dslr dual new pro latest cinema
+Location: Bangalore

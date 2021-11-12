@@ -71,14 +71,16 @@ router.get('/user/:id/cart', async(req, res)=>{
     const user = await User.findById(req.params.id);
     const cart = user.cart;
     const array = [];
+    let totalAmount = 0;
 
     for(let i = 0; i < cart.length; i++) {
         let product = await Product.findById(cart[i]);
         array.push(product);
+        totalAmount += product.price;
     }
 
     const products = [...new Set(array)];
-    res.render('cart/index', {products});
+    res.render('cart/index', {products, totalAmount});
 });
 
 

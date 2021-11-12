@@ -8,7 +8,7 @@ const ProductSchema = new Schema({
     brand: String,
     model: String,
     category: String,
-    units: Number,
+    units: Number, //Use by Dealer
     image: {
         type: String,
         default: "https://cdn2.iconfinder.com/data/icons/e-commerce-line-4-1/1024/open_box4-512.png"

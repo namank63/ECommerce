@@ -1,0 +1,42 @@
+username: CustomerA
+image: https://avatarfiles.alphacoders.com/123/thumb-123713.jpg
+profile: customer
+email: customerA@gmail.com
+mobile: 1111111111
+address: CustomerA, AppartmentA, StreetA, DistrictA, StateA
+
+username: CustomerB
+image: https://pfpmaker.com/_nuxt/img/profile-5-1.1d185ab.png
+profile: customer
+email: customerB@gmail.com
+mobile: 2222222222
+address: CustomerB, AppartmentB, StreetB, DistrictB, StateB
+
+username: CustomerC
+image: https://64.media.tumblr.com/4dace75907afef13ec4a6cfbe43a6b4c/45e0c5bfd3ffb78e-a3/s500x750/f54a2ef3cf0f1d95d684c8cb6d33aed131c0326d.png
+profile: customer
+email: customerC@gmail.com
+mobile: 3333333333
+address: CustomerC, AppartmentC, StreetC, DistrictC, StateC
+
+username: DealerA
+profile: dealer
+image: https://images.avishkaar.cc/user/avatar/innovator.webp
+email: dealerA@gmail.com
+mobile: 4444444444
+storeLocation: DealerA, AppartmentA, StreetA, DistrictA, StateA
+
+username: DealerB
+profile: dealer
+image: https://i.pinimg.com/564x/b4/ba/71/b4ba71aea80eb9cad121134a344d3f8e--detective-comics-dc-heroes.jpg
+email: dealerB@gmail.com
+mobile: 5555555555
+storeLocation: DealerB, AppartmentB, StreetB, DistrictB, StateB
+
+username: Admin
+profile: admin
+image: https://cdn3.iconfinder.com/data/icons/user-roles/64/users-18-512.png
+email: admin@gmail.com
+mobile: 6666666666
+uniquekey: 123456
+officeLocation: Admin, AppartmentAdmin, StreetAdmin, DistrictAdmin, StateAdmin

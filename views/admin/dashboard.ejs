@@ -1,1 +1,20 @@
 <% layout('layouts/adminBoilerplate')%>
+
+<div class="container mb-5">
+  <div class="d-flex justify-content-center row">
+      <div class="col-md-12">
+        <h2>Total Users: <%=users.length%> </h2>
+        <h4>Customers: <%=customerCount%></h4>
+        <h4>Dealers: <%=dealerCount%></h4>
+        <h4>Admins: <%=adminCount%></h4>
+        <a href="/admin/users">View All</a>
+        <br>
+        <br>
+        <h2>Total Products: <%=products.length%> </h2>
+        <h4>Mobiles: <%=mobileCount%></h4>
+        <h4>Laptops: <%=laptopCount%></h4>
+        <h4>Watches: <%=watchCount%></h4>
+        <a href="/admin/products">View All</a>
+      </div>
+  </div>
+</div>
