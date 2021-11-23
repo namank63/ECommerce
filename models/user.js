@@ -14,7 +14,7 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
-    
+
     mobile: String,
 
     //As Customer
@@ -39,3 +39,4 @@ const UserSchema = new Schema({
 UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', UserSchema);
+

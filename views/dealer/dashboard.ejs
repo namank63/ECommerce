@@ -2,9 +2,15 @@
 <div class="container">
   <div class="container mb-5">
       <div class="d-flex justify-content-center row">
+        <div class="card-header bg-dark text-white">
+          <h2>All Store Products</h2>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Total Products: <%=products.length%></h5>
+        </div>
           <div class="col-md-8">
             <a class="mb-3 btn btn-small border rounder" href="/product/new">Add Product</a>
-            <% products.forEach( (product) => { %> 
+            <% products.slice().reverse().forEach(function(product){ %> 
               <div class="row p-3 bg-white border rounded mb-3">
                 <div class="col-md-4 mt-1"><img class="img-fluid img-responsive rounded product-image" src="<%-product.image%>"></div>
                 <div class="col-md-5 mt-1">

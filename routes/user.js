@@ -51,13 +51,13 @@ router.get('/users/:id', async(req, res)=>{
 });
 
 //EDIT
-router.get('/users/:id/edit', async(req, res)=>{
+router.get('/users/:id/edit', isLoggedIn, async(req, res)=>{
     const user = await User.findById(req.user._id);
     res.render('users/edit', {user});
 });
 
 //UPDATE
-router.put('/users/:id', catchAsync(async (req, res) => {
+router.put('/users/:id', isLoggedIn, catchAsync(async (req, res) => {
     const id = req.user._id;
     const user = await User.findByIdAndUpdate(id, { ...req.body.user });
     req.flash('success', 'Account Updated Successfully!');
@@ -67,7 +67,7 @@ router.put('/users/:id', catchAsync(async (req, res) => {
 
 //CART
 //Index
-router.get('/user/:id/cart', async(req, res)=>{
+router.get('/user/:id/cart', isLoggedIn, async(req, res)=>{
     const user = await User.findById(req.params.id);
     const cart = user.cart;
     const array = [];
@@ -108,7 +108,7 @@ router.post('/user/:id/cart', isLoggedIn, async(req, res)=>{
 
 });
 
-router.post('/user/cartdelete/:id', async(req, res)=>{
+router.post('/user/cartdelete/:id', isLoggedIn, async(req, res)=>{
     const id = req.params.id;
     const user = await User.findById(req.user._id);
     const product = await Product.findById(id);

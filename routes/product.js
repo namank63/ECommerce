@@ -40,14 +40,14 @@ router.get('/products/:id', async (req, res)=>{
 
 
 //Edit    /products/:id/edit    GET
-router.get('/products/:id/edit', async (req, res)=>{
+router.get('/products/:id/edit', isLoggedIn, async (req, res)=>{
     const product = await Product.findById(req.params.id);
     res.render('products/edit', { product });
 });
 
 
 //Update    /products/:id    PUT
-router.put('/products/:id', catchAsync(async (req, res) => {
+router.put('/products/:id', isLoggedIn, catchAsync(async (req, res) => {
     const { id } = req.params;
     const product = await Product.findByIdAndUpdate(id, { ...req.body.product });
     req.flash('success', 'Successfully updated product!');

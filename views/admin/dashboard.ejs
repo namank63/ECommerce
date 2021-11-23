@@ -1,20 +1,30 @@
 <% layout('layouts/adminBoilerplate')%>
 
 <div class="container mb-5">
-  <div class="d-flex justify-content-center row">
-      <div class="col-md-12">
-        <h2>Total Users: <%=users.length%> </h2>
-        <h4>Customers: <%=customerCount%></h4>
-        <h4>Dealers: <%=dealerCount%></h4>
-        <h4>Admins: <%=adminCount%></h4>
-        <a href="/admin/users">View All</a>
-        <br>
-        <br>
-        <h2>Total Products: <%=products.length%> </h2>
-        <h4>Mobiles: <%=mobileCount%></h4>
-        <h4>Laptops: <%=laptopCount%></h4>
-        <h4>Watches: <%=watchCount%></h4>
-        <a href="/admin/products">View All</a>
+  <div class="d-flex justify-content-between">
+    <div class="card" style="width: 30%; margin-left: 10%;">
+      <div class="card-header bg-dark text-white">
+        <h2>Users</h2>
       </div>
-  </div>
+      <div class="card-body">
+        <h5 class="card-title">Total Users: <%=users.length%></h5>
+        <p class="card-text">Customers: <%=customerCount%></p>
+        <p class="card-text">Dealers: <%=dealerCount%></p>
+        <p class="card-text">Admins: <%=adminCount%></p>
+        <a href="/admin/users" class="btn btn-info">View All</a>
+      </div>
+    </div>
+    <div class="card" style="width: 30%; margin-right: 10%;">
+      <div class="card-header bg-dark text-white">
+        <h2>Products</h2>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Total Products: <%=products.length%></h5>
+        <p class="card-text">Mobiles: <%=mobileCount%></p>
+        <p class="card-text">Laptops: <%=laptopCount%></p>
+        <p class="card-text">Watches: <%=watchCount%></p>
+        <a href="/admin/products" class="btn btn-info">View All</a>
+      </div>
+    </div>
+
 </div>

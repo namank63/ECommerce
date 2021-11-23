@@ -27,9 +27,9 @@ router.get('/admin', isAdminLoggedIn, async (req, res) => {
   }
 
   for(let i = 0; i < products.length; i++) {
-    if(products[i].categoty == 'mobile')
+    if(products[i].category == 'Mobile')
       mobileCount++;
-    else if(products[i].categoty == 'laptop')
+    else if(products[i].category == 'Laptop')
       laptopCount++;
     else
       watchCount++;

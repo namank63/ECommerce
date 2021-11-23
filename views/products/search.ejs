@@ -6,7 +6,7 @@
         <% if(products.length == 0) { %>
           <h2>No item found!!</h2>
         <% } %>
-        <% products.forEach( (product) => { %> 
+        <% products.slice().reverse().forEach(function(product){ %> 
           <div class="row p-3 bg-white border rounded mb-3">
             <div class="col-md-4 mt-1"><img class="img-fluid img-responsive rounded product-image" src="<%-product.image%>"></div>
             <div class="col-md-5 mt-1">

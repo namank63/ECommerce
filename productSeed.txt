@@ -30,3 +30,69 @@ units: 4
 image: https://3.img-dpreview.com/files/p/E~TC4x3S590x0~articles/1641689739/Xperia_Pro-I_1.jpeg
 tags: sony mobile camera phone dslr dual new pro latest cinema
 Location: Bangalore
+
+name: MacBook Pro
+price: 115500
+description: The new MacBook Pro 14 and MacBook Pro 16. Buy now. Incredible performance with the M1 Pro or M1 Max chip.
+brand: Apple
+model: M1 Pro 2021
+category: Laptop
+units: 5
+image: https://m.media-amazon.com/images/I/71an9eiBxpL._SL1500_.jpg
+tags: apple laptop macbook mac lappy 2021 m1 pro new latest
+Location: Hydrabad
+
+name: Apple Watch Series 7
+price: 50900
+description: Apple Watch is a line of smartwatches produced by Apple Inc. It incorporates fitness tracking, health-oriented capabilities, and wireless telecommunication, and integrates with iOS and other Apple products and services.
+brand: Apple
+model: Series 7
+category: Watch
+units: 9
+image: https://www.apple.com/newsroom/images/product/watch/standard/Apple_watch-series7-availability_hero_10052021_big.jpg.large.jpg
+tags: apple watch clock time 2021 new latest
+Location: Hydrabad
+
+name: Microsoft Surface Pro
+price: 90990
+description: More powerful than ever, Surface Pro 7 features a laptop-class Intel® Core™ processor, improved battery and graphics, and more multitasking connections.
+brand: Apple
+model: Pro 7
+category: Laptop
+units: 7
+image: https://images.unsplash.com/photo-1595245150809-ef9436aaded6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80
+tags: microsoft laptop surface windows 10 lappy 2021 intel i7 pro new latest
+Location: Hydrabad
+
+name: Galaxy Watch4
+price: 26999
+description: The Samsung Galaxy Watch 4’s sharp design, smart software and standout health sensor make for a promising upgrade that somehow costs less than last year’s version.
+brand: Samsung
+model: Watch4
+category: Watch
+units: 5
+image: https://media.wired.com/photos/612914e967168b68f9ececa6/master/pass/Gear-Samsung-Galaxy-Watch4-and-Watch4-Classic-SOURCE-Samsung.jpg
+tags: samsung watch 2021 galaxy time clock
+Location: Delhi
+
+name: Galaxy Watch4
+price: 26999
+description: The Samsung Galaxy Watch 4’s sharp design, smart software and standout health sensor make for a promising upgrade that somehow costs less than last year’s version.
+brand: Samsung
+model: Watch4
+category: Watch
+units: 5
+image: https://media.wired.com/photos/612914e967168b68f9ececa6/master/pass/Gear-Samsung-Galaxy-Watch4-and-Watch4-Classic-SOURCE-Samsung.jpg
+tags: samsung watch 2021 galaxy time clock
+Location: Delhi
+
+name: ROG Strix G531
+price: 89900
+description: GeForce RTX™ 3080 Laptop GPU; Windows 10 Pro; AMD Ryzen™ 9 5000 Series; 17.3"; 1TB + 1TB M.2 NVMe™ PCIe® 3.0 Performance RAID0 SSD
+brand: Asus
+model: Strix G531
+category: Laptop
+units: 3
+image: https://m.media-amazon.com/images/I/81aaaWX8UcL._AC_SL1500_.jpg
+tags: asus rog laptop fast intel gaming g531 lappy new gtx rtx
+Location: Delhi
